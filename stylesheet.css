@@ -81,6 +81,7 @@ a:hover {
 	height: 150px;
 	margin: 0 0;
 	padding: 0px;
+	backgorund-color: transparent;
 	/*background: url(images/logo.jpg) repeat left top;*/
 	/*background: url(images/img02.gif) no-repeat left top;*/
 }
