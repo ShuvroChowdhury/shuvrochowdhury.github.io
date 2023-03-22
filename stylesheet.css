@@ -99,7 +99,8 @@ a:hover {
 	color: #000000;
 }
 
-#logo {
+#logo { 
+	width: 392px;
 	margin: 0px;
 	padding: 0px 0px 0px 0px;
 	color: #000000;
