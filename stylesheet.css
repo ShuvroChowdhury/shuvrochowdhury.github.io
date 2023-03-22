@@ -91,7 +91,7 @@ a:hover {
 #logoimage{
 	float:left;
 	margin: 0px;
-	padding: 0px 10px 10px 5px;
+	padding: 5px 10px 10px 5px;
 	color: #000000;
 }
 
@@ -118,7 +118,7 @@ a:hover {
 
 #logo p {
 	margin: 0;
-	padding: 10px 0 0 0px;
+	padding: 0px 0px 0px 0px;
 	font: normal 16px Arial, Helvetica, sans-serif;;
 	font-style: normal;
 	color: #000000;
