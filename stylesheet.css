@@ -108,7 +108,7 @@ a:hover {
 	
 }
 
-#logo h1, #logo p {
+#logo h1 {
 	margin: 0px;
 	padding: 0px;
 }
@@ -121,7 +121,7 @@ a:hover {
 }
 
 #logo p {
-	margin: 0;
+	margin: 10px;
 	padding: 0px 0px 0px 0px;
 	font: normal 16px Arial, Helvetica, sans-serif;;
 	font-style: normal;
