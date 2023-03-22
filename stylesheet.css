@@ -101,6 +101,10 @@ a:hover {
 	color: #000000;
 	position: relative;
 	left: 0px;
+	border-bottom:1px solid #000000;
+	border-top:1px solid #000000;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
 	
 }
 
@@ -179,7 +183,10 @@ a:hover {
 	margin: 0px auto;
 	padding: 0px 0px 0px 0px;
 	/*background: url(images/img02.jpg) no-repeat left top;*/
-	border-bottom:1px solid #ffffff;
+	border-bottom:1px solid #000000;
+	border-top:1px solid #000000;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
 }
 
 #nav ul {
