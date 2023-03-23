@@ -507,7 +507,7 @@ a:hover {
 #visit{
 	float:left;
 	padding-top: 10px;
-	width: 270px;
+	width: 350px;
 }
 #call{
 		float:left;
@@ -515,15 +515,15 @@ a:hover {
 	    width: 220px;
 }
 #followme{
-		float:left;
+		float:right;
 		padding-top: 0px;
-	    width: 220px;
+	    width: 280px;
 	    height: 35px;
 }
 #contact{
 		float:left;
 		padding-top: 10px;
-	    width: 240px;
+	    width: 350px;
 }
 #copyright{
 		float: right;
