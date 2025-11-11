@@ -1,0 +1,474 @@
+
+        /* General Theme */
+        html {
+            font-size: clamp(18px, 1.5vw, 24px);
+            scroll-padding-top: 130px;
+        }
+        body {
+            background-color: #f5f5f5;
+            /* Light grey background for the entire page */
+            font-family: 'Poppins', sans-serif;
+            /* Apply Poppins Font */
+              font-size: 1rem;
+              line-height: 1.6;
+              word-wrap: break-word;
+              overflow-x: hidden;
+        }
+
+        .container {
+            /* margin-top: 30px;
+            max-width: 1180px; */
+            max-width: 100%;
+            /* padding-left: 15px;
+            padding-right: 15px; */
+            
+        }
+
+        .main-content-box {
+            width: 100%;
+            padding: 20px;
+            background-color: #fafafa;
+            /* White background for main content boxes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 0 auto;
+            margin-bottom: 30px;  
+        }
+
+        p {
+            color: #333;
+            /* Dark grey text for readability */
+        }
+
+        a {
+            color: #000;
+            /* Black color for links */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #00796b;
+            /* Dark teal color for link hover state */
+        }
+
+        .fa-ul {
+            padding-left: 2.5em;
+        }
+
+
+        .fa-li i  {
+            margin-right: 8px; /* Add space between icon and text */
+	        padding-left: 5px;
+	        text-indent: -40px;
+        }
+
+
+/* Floating banner-style navbar */
+.navbar {
+    position: fixed;
+      left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+  
+    background-color: #ffffff;              /* white or soft off-white background */
+    color: #003b32;                         /* dark teal text for contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* soft shadow for floating look */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.04); /* subtle bottom edge line */
+
+
+    /* match .px-responsive */
+    max-width: none;
+    margin: 0;
+    z-index: 1000;
+    min-height: 90px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .container-fluid {
+  padding: 0 2rem;
+}
+
+/* Adjust navbar text styles */
+.navbar-brand, .nav-link {
+  color: #003b32 !important;
+  font-size: 1.1rem; /* make your name more prominent */
+  font-weight: 600;
+}
+
+.navbar-brand {
+  background-color: #004d40;  /* dark teal or any accent color */
+  color: #ffffff !important;  /* white text for contrast */
+  padding: 0.5rem 1.2rem;     /* inner spacing */
+  border-radius: 8px;         /* rounded corners */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin: 0 2rem;                  /* gap before/after name */
+}
+
+/* optional hover effect for subtle polish */
+.navbar-brand:hover {
+  background-color: #00695c;  /* slightly lighter teal on hover */
+  color: #e0f2f1 !important;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+
+.nav-link:hover {
+  color: #009688 !important; /* teal accent on hover */
+}
+
+
+
+
+/* Animated underline from center */
+.navbar .nav-link {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;                 /* position the line at the bottom */
+  left: 50%;                 /* start from center */
+  transform: translateX(-50%) scaleX(0); /* initially invisible */
+  transform-origin: center;  /* grow from center */
+  width: 100%;
+  height: 4px;               /* thickness of underline */
+  background-color: #009688; /* color of underline */
+  transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar .nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1); /* expands fully on hover */
+}
+
+.nav-link:focus, .navbar-toggler:focus {
+  outline: 2px solid #009688;
+  outline-offset: 3px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,59,50, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  }
+  .navbar .nav-link {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar { min-height: 80px; }
+  html { scroll-padding-top: 140px; }
+}
+
+@media (min-width: 992px) { p { text-align: justify; } }
+
+
+
+        /* Sidebar Customization */
+        .sidebar-content {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-content img {
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            /* Dark grey border */
+        }
+
+        .social-icons {
+            font-size: 0; /* remove inline spacing between icons */
+        }
+
+        .social-icons a {
+            color: #333;
+            /* Dark grey color for social icons */
+            font-size: 48px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00796b;
+            /* Dark teal color for social icon hover */
+            text-decoration: none !important;
+        }
+
+        .social-icons i, 
+        .social-icons svg {
+            vertical-align: middle;   /* centers vertically */
+            line-height: 1;           /* removes extra baseline space */
+            display: inline-block;    /* prevents text metrics */
+        }
+
+
+        /* Center sidebar content inside the welcome box */
+        .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* centers vertically */
+        height: 100%;
+        text-align: center;
+        }
+
+        .sidebar-content h2 { 
+            font-size:26pt;
+            color: #333;
+        }
+        .sidebar-content p {
+            color: #333;
+            /* Dark grey text for sidebar content */
+            text-align: center;
+        }
+
+        .accordion-button {
+            font-size: 1rem;
+            /* Adjust font size to be smaller */
+            font-weight: 500;
+            /* Adjust font weight */
+            color: #000;
+            /* White text color */
+            padding: 10px 15px;
+            /* Adjust padding */
+            display: flex;
+            /* Flex display for alignment */
+            justify-content: space-between;
+            /* Space between text and icon */
+            align-items: center;
+            /* Center items vertically */
+            background: #fff;
+            border-bottom: 1px solid #eef2f3;
+        }
+
+        /* lighter publication accordion */
+
+        .accordion-button:not(.collapsed) {
+        background: #e9f4f2;
+        color: #003b32;
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            /* Remove focus box shadow */
+        }
+
+        .accordion-body {
+            background-color: #f9f9f9;
+            /* Light grey background for accordion content */
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            /* Dark grey text for accordion content */
+        }
+
+        .accordion-item {
+        border: 1px solid #eef2f3;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            /* Dark grey for publication title */
+        }
+
+        .publication-date {
+            font-size: 0.9rem;
+            color: #666;
+            /* Lighter grey for publication date */
+            margin-bottom: 10px;
+        }
+
+        .publication-link {
+            color: #333;
+            /* Dark grey for publication link */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .publication-link:hover {
+            color: #00796b;
+            /* Dark teal color for publication link hover */
+        }
+
+        /* Enhanced Section Headings */
+        .section-heading {
+            font-size: 2rem;
+            /* Increase font size */
+            font-weight: 700;
+            /* Make the text bold */
+            color: #333;
+            /* Dark grey color for the text */
+            margin-top: 20px;
+            /* Add space above the heading */
+            margin-bottom: 10px;
+            /* Add space below the heading */
+            display: inline-block;
+            text-transform: uppercase;
+            /* Make the text uppercase */
+        }
+
+        .section-heading-wrapper {
+            margin-bottom: 10px;
+        }
+
+        /* Reset margins and paddings for main content boxes with section headings outside */
+        .main-content-box h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* hero-style for the first card */
+        .hero-card {
+        background: linear-gradient(135deg, #ffffff 0%, #e9f4f2 100%);
+        border: 1px solid rgba(0,0,0,0.03);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.03);
+        border-radius: 1rem;
+        padding: 2.25rem 2.5rem;
+        transition: box-shadow 0.3s ease;
+        }
+
+        /* sidebar/profile polish */
+        .profile-img {
+        /* width: 140px; 
+        height: 140px; */
+        width: 100%;        
+        max-width: 300px;   /* limit the largest size */
+        height: auto;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        display: block;
+        margin: 0 auto;
+        }
+
+        .sidebar-name {
+        font-weight: 700;
+        margin-top: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+
+
+        /* make links look clearer */
+        a {
+        color: #006b5a;
+        }
+        a:hover {
+        color: #004236;
+        text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out 1s both;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+            animation-delay: 1s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-play-state: running;
+            animation-name: fadeIn;
+            animation-timeline: auto;
+            animation-range-start: normal;
+            animation-range-end: normal;
+        }
+
+        .main-content-box {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            padding-right: 50px; /* adjust value as needed (30–60px works well) */
+            padding-left: 50px; /* adjust value as needed (30–60px works well) */
+        }
+
+        .main-content-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Remove the inner box styling for the sidebar inside the Welcome box */
+.main-content-box .sidebar-content {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+        /* Default desktop spacing */
+.px-responsive {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.sidebar-content h2 { 
+            font-size:26pt;
+            color: #333;
+            margin-bottom: 20px; /* increase or decrease as you like */
+}
+
+
+
+/* Slightly smaller desktops (under ~1400px) */
+@media (max-width: 1399.98px) {
+  .px-responsive {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Medium screens (tablets, ~1000–1200px) */
+@media (max-width: 1199.98px) {
+  .px-responsive {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+/* Small screens (phones, <768px) */
+@media (max-width: 767.98px) {
+  .px-responsive {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+        /* space below fixed navbar */
+#home {
+  padding-top: 130px;  /* adjust to match navbar height */
+}
