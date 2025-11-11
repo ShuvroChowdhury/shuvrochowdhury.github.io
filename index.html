@@ -14,8 +14,7 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-        gtag('config', 'YOUR_TRACKING_ID');
-        gtag('event', 'accordion_open', { 'section': 'Publications' });
+        gtag('config', 'G-QKNC1D3BKM');
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -25,27 +24,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
+<style>
+
+
         /* General Theme */
+        html {
+            font-size: clamp(18px, 1.5vw, 24px);
+            scroll-padding-top: 130px;
+        }
         body {
             background-color: #f5f5f5;
             /* Light grey background for the entire page */
             font-family: 'Poppins', sans-serif;
             /* Apply Poppins Font */
+              font-size: 1rem;
+              line-height: 1.6;
+              word-wrap: break-word;
+              overflow-x: hidden;
         }
 
         .container {
-            margin-top: 30px;
-            max-width: 1180px;
+            /* margin-top: 30px;
+            max-width: 1180px; */
+            max-width: 100%;
+            /* padding-left: 15px;
+            padding-right: 15px; */
+            
         }
 
         .main-content-box {
+            width: 100%;
             padding: 20px;
-            background-color: #fff;
+            background-color: #fafafa;
             /* White background for main content boxes */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin: 0 auto;
+            margin-bottom: 30px;  
         }
 
         p {
@@ -77,23 +92,122 @@
         }
 
 
-        /* Navbar Customization */
-        .navbar {
-            background-color: #222;
-            /* Dark grey background for the navbar */
-            margin-bottom: 30px;
-        }
+/* Floating banner-style navbar */
+.navbar {
+    position: fixed;
+      left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+  
+    background-color: #ffffff;              /* white or soft off-white background */
+    color: #003b32;                         /* dark teal text for contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* soft shadow for floating look */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.04); /* subtle bottom edge line */
 
-        .navbar-brand,
-        .nav-link {
-            color: #fff;
-            /* White text color for the navbar */
-        }
 
-        .nav-link:hover {
-            color: #00796b;
-            /* Dark teal color for navbar item hover */
-        }
+    /* match .px-responsive */
+    max-width: none;
+    margin: 0;
+    z-index: 1000;
+    min-height: 90px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .container-fluid {
+  padding: 0 2rem;
+}
+
+/* Adjust navbar text styles */
+.navbar-brand, .nav-link {
+  color: #003b32 !important;
+  font-size: 1.1rem; /* make your name more prominent */
+  font-weight: 600;
+}
+
+.navbar-brand {
+  background-color: #004d40;  /* dark teal or any accent color */
+  color: #ffffff !important;  /* white text for contrast */
+  padding: 0.5rem 1.2rem;     /* inner spacing */
+  border-radius: 8px;         /* rounded corners */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin: 0 2rem;                  /* gap before/after name */
+}
+
+/* optional hover effect for subtle polish */
+.navbar-brand:hover {
+  background-color: #00695c;  /* slightly lighter teal on hover */
+  color: #e0f2f1 !important;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+
+.nav-link:hover {
+  color: #009688 !important; /* teal accent on hover */
+}
+
+
+
+
+/* Animated underline from center */
+.navbar .nav-link {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;                 /* position the line at the bottom */
+  left: 50%;                 /* start from center */
+  transform: translateX(-50%) scaleX(0); /* initially invisible */
+  transform-origin: center;  /* grow from center */
+  width: 100%;
+  height: 4px;               /* thickness of underline */
+  background-color: #009688; /* color of underline */
+  transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar .nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1); /* expands fully on hover */
+}
+
+.nav-link:focus, .navbar-toggler:focus {
+  outline: 2px solid #009688;
+  outline-offset: 3px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,59,50, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  }
+  .navbar .nav-link {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar { min-height: 80px; }
+  html { scroll-padding-top: 140px; }
+}
+
+@media (min-width: 992px) { p { text-align: justify; } }
+
+
 
         /* Sidebar Customization */
         .sidebar-content {
@@ -112,10 +226,14 @@
             /* Dark grey border */
         }
 
+        .social-icons {
+            font-size: 0; /* remove inline spacing between icons */
+        }
+
         .social-icons a {
             color: #333;
             /* Dark grey color for social icons */
-            font-size: 24px;
+            font-size: 48px;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -123,15 +241,35 @@
         .social-icons a:hover {
             color: #00796b;
             /* Dark teal color for social icon hover */
+            text-decoration: none !important;
+        }
+
+        .social-icons i, 
+        .social-icons svg {
+            vertical-align: middle;   /* centers vertically */
+            line-height: 1;           /* removes extra baseline space */
+            display: inline-block;    /* prevents text metrics */
+        }
+
+
+        /* Center sidebar content inside the welcome box */
+        .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* centers vertically */
+        height: 100%;
+        text-align: center;
         }
 
         .sidebar-content h2 { 
-            font-size:18pt;
+            font-size:26pt;
             color: #333;
         }
         .sidebar-content p {
             color: #333;
             /* Dark grey text for sidebar content */
+            text-align: center;
         }
 
         .accordion-button {
@@ -141,10 +279,6 @@
             /* Adjust font weight */
             color: #000;
             /* White text color */
-            background-color: #ddd;
-            /* Dark grey background */
-            border: none;
-            /* Remove any borders */
             padding: 10px 15px;
             /* Adjust padding */
             display: flex;
@@ -153,13 +287,16 @@
             /* Space between text and icon */
             align-items: center;
             /* Center items vertically */
+            background: #fff;
+            border-bottom: 1px solid #eef2f3;
         }
 
+        /* lighter publication accordion */
+
         .accordion-button:not(.collapsed) {
-            color: #fff;
-            /* White text color for active state */
-            background-color: #00796b;
-            /* Dark teal background color for active state */
+        background: #e9f4f2;
+        color: #003b32;
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
         }
 
         .accordion-button:focus {
@@ -175,6 +312,12 @@
             line-height: 1.5;
             color: #333;
             /* Dark grey text for accordion content */
+        }
+
+        .accordion-item {
+        border: 1px solid #eef2f3;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
         }
 
         .publication-title {
@@ -245,12 +388,17 @@
 
         /* sidebar/profile polish */
         .profile-img {
-        width: 140px;
-        height: 140px;
+        /* width: 140px; 
+        height: 140px; */
+        width: 100%;        
+        max-width: 300px;   /* limit the largest size */
+        height: auto;
         object-fit: cover;
         border-radius: 50%;
         border: 3px solid #fff;
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        display: block;
+        margin: 0 auto;
         }
 
         .sidebar-name {
@@ -260,22 +408,7 @@
         border-bottom: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* lighter publication accordion */
-        .accordion-button {
-        background: #fff;
-        border-bottom: 1px solid #eef2f3;
-        font-weight: 500;
-        }
-        .accordion-button:not(.collapsed) {
-        background: #e9f4f2;
-        color: #003b32;
-        box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
-        }
-        .accordion-item {
-        border: 1px solid #eef2f3;
-        border-radius: 0.5rem;
-        margin-bottom: 0.75rem;
-        }
+
 
         /* make links look clearer */
         a {
@@ -285,13 +418,96 @@
         color: #004236;
         text-decoration: underline;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out 1s both;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+            animation-delay: 1s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-play-state: running;
+            animation-name: fadeIn;
+            animation-timeline: auto;
+            animation-range-start: normal;
+            animation-range-end: normal;
+        }
+
+        .main-content-box {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            padding-right: 50px; /* adjust value as needed (30–60px works well) */
+            padding-left: 50px; /* adjust value as needed (30–60px works well) */
+        }
+
+        .main-content-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Remove the inner box styling for the sidebar inside the Welcome box */
+.main-content-box .sidebar-content {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+        /* Default desktop spacing */
+.px-responsive {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.sidebar-content h2 { 
+            font-size:26pt;
+            color: #333;
+            margin-bottom: 20px; /* increase or decrease as you like */
+}
+
+
+
+/* Slightly smaller desktops (under ~1400px) */
+@media (max-width: 1399.98px) {
+  .px-responsive {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Medium screens (tablets, ~1000–1200px) */
+@media (max-width: 1199.98px) {
+  .px-responsive {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+/* Small screens (phones, <768px) */
+@media (max-width: 767.98px) {
+  .px-responsive {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+        /* space below fixed navbar */
+#home {
+  padding-top: 130px;  /* adjust to match navbar height */
+}
     </style>
+
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid" >
             <a class="navbar-brand" href="#"><b>Shuvro Chowdhury</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -319,22 +535,51 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container" id="home" style="padding-top: 80px;">
+    <div class="container-fluid px-responsive" id="home">
         <!-- Added padding to offset the fixed navbar -->
         <div class="row">
-            <div class="col-md-8 hero-card">
+            <div class="col">
                 <div class="section-heading-wrapper">
                     <h2 class="section-heading" id="about">Welcome</h2>
                 </div>
                 <div class="main-content-box">
-                    <p>Hello, there! I am Dr. Shuvro Chowdhury. This site provides insights into my research interests, publications, academic background, and more.</p>
-					<p>Currently, I work as a postdoctoral scholar with <a href="https://www.ece.ucsb.edu/people/faculty/kerem-camsari"> Kerem Y. Camsari </a> at the <a href="https://opus.ece.ucsb.edu/"> OPUS lab </a>, University of California, Santa Barbara. My current research primarily focuses on hardware acceleration for machine learning of classical and quantum many-body systems using probabilistic bits (p-bits). These p-bits are robust, room-temperature-operable entities that fluctuate between two logic states and can be tuned via external signals. They offer a promising avenue for advancements in probabilistic and quantum computing and can be integrated using existing fabrication technologies.</p>
-					<p>My expertise spans Probabilistic and Neuromorphic Computing, Quantum Computing, Machine Learning, and Nanoscale Device Modeling and Simulation. I am an active IEEE member.</p>
-					<p>I received my Ph.D. from the Elmore Family School of Electrical and Computer Engineering at Purdue University, where I worked under the guidance of Supriyo Datta. My doctoral research focused on quantum emulation with probabilistic computers, inspired by Richard Feynman's insight:</p>
-					<p>"The only difference between a probabilistic classical world and the equations of the quantum world is that somehow or other it appears as if the probabilities would have to go negative ... "</p>
-					<p>This notion underlines the potential of quantum computing to leverage negative probabilities, though practical quantum computation remains a challenging goal today.</p>
-					<p>Feel free to explore the sections below to learn more about my work and contributions. For any inquiries or collaborations, please contact me through the links provided in the sidebar. Thank you for visiting!</p>
+                    <div class="row">
+                    <!-- Left column: text -->
+                        <div class="col-lg-3">
+                            <div class="sidebar-content">
+                                <h2>Shuvro Chowdhury, PhD</h2>
+                                <img height="150pt" width="150pt" src="SC.jpg" alt="Shuvro Chowdhury's Photo" class="profile-img img-fluid mb-3">
+                                <p>Postdoctoral Scholar<br>
+		                            University of California Santa Barbara<br>
+		                            Santa Barbara, CA
+                                </p>
+                                <p><a href="mailto:schowdhury@ucsb.edu">schowdhury@ucsb.edu</a></p>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/shuvro-chowdhury/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://github.com/ShuvroChowdhury" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://scholar.google.com/citations?user=LaaV0xwAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <p>Hello, there! I am Dr. Shuvro Chowdhury. This site provides insights into my research interests, publications, academic background, and more.</p>
+					        <p>Currently, I work as a postdoctoral scholar with <a href="https://www.ece.ucsb.edu/people/faculty/kerem-camsari"> Kerem Y. Camsari </a> at the <a href="https://opus.ece.ucsb.edu/"> OPUS lab</a>, University of California, Santa Barbara. My current research primarily focuses on hardware acceleration for machine learning of classical and quantum many-body systems using probabilistic bits (p-bits). These p-bits are robust, room-temperature-operable entities that fluctuate between two logic states and can be tuned via external signals. They offer a promising avenue for advancements in probabilistic and quantum computing and can be integrated using existing fabrication technologies.</p>
+					        <p>My expertise spans Probabilistic and Neuromorphic Computing, Quantum Computing, Machine Learning, and Nanoscale Device Modeling and Simulation. I am an active IEEE member.</p>
+					        <p>I received my Ph.D. from the Elmore Family School of Electrical and Computer Engineering at Purdue University, where I worked under the guidance of Supriyo Datta. My doctoral research focused on quantum emulation with probabilistic computers, inspired by Richard Feynman's insight:</p>
+					        <p>"The only difference between a probabilistic classical world and the equations of the quantum world is that somehow or other it appears as if the probabilities would have to go negative ... "</p>
+					        <p>This notion underlines the potential of quantum computing to leverage negative probabilities, though practical quantum computation remains a challenging goal today.</p>
+					        <p>Feel free to explore the sections below to learn more about my work and contributions. For any inquiries or collaborations, please contact me through the links provided in the sidebar. Thank you for visiting!</p>
+                        </div>
+                        <!-- Right column: sidebar content -->
+                    </div>
                 </div>
+
                 <div class="section-heading-wrapper">
                     <h2 class="section-heading" id="research">Research Interests</h2>
                 </div>
@@ -351,7 +596,7 @@
 
                
                 <div class="section-heading-wrapper">
-                    <h2 class="section-heading">Academic Degrees</h2>
+                    <h2 class="section-heading" id="academic-degrees">Academic Degrees</h2>
                 </div>
                 <div class="main-content-box">
                     <ul class="fa-ul">
@@ -367,7 +612,7 @@
                 <div class="main-content-box">
                     <div class="accordion" id="publicationsAccordion">
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header" id="headingThirteen">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
                                     Pushing the boundary of quantum advantage in hard combinatorial optimization with probabilistic computers
                                 </button>
@@ -377,13 +622,13 @@
                                     <div class="publication-title">Pushing the boundary of quantum advantage in hard combinatorial optimization with probabilistic computers</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> October 2025</div>
                                     <p>Recent demonstrations on specialized benchmarks have reignited excitement for quantum computers, yet their advantage for real-world problems remains an open question. Here, we show that probabilistic computers, co-designed with hardware to implement Monte Carlo algorithms, provide a scalable classical pathway for solving hard optimization problems. We focus on two algorithms applied to three-dimensional spin glasses: discrete-time simulated quantum annealing and adaptive parallel tempering. We benchmark these methods against a leading quantum annealer. For simulated quantum annealing, increasing replicas improves residual energy scaling, consistent with extreme value theory. Adaptive parallel tempering, supported by non-local isoenergetic cluster moves, scales more favorably and outperforms simulated quantum annealing. Field Programmable Gate Arrays or specialized chips can implement these algorithms in modern hardware, leveraging massive parallelism to accelerate them while improving energy efficiency. Our results establish a rigorous classical baseline for assessing practical quantum advantage and present probabilistic computers as a scalable platform for real-world optimization challenges.</p>
-                                    <a href="https://www.nature.com/articles/s41467-025-64235-y" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://www.nature.com/articles/s41467-025-64235-y" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="False" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Accelerated quantum Monte Carlo with probabilistic computers
                                 </button>
                             </h2>
@@ -392,7 +637,7 @@
                                     <div class="publication-title">Accelerated quantum Monte Carlo with probabilistic computers</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> April 2023</div>
                                     <p>Quantum Monte Carlo (QMC) techniques are widely used in a variety of scientific problems and much work has been dedicated to developing optimized algorithms that can accelerate QMC on standard processors (CPU). With the advent of various special purpose devices and domain specific hardware, it has become increasingly important to establish clear benchmarks of what improvements these technologies offer compared to existing technologies. In this paper, we demonstrate 2 to 3 orders of magnitude acceleration of a standard QMC algorithm using a specially designed digital processor, and a further 2 to 3 orders of magnitude by mapping it to a clockless analog processor. Our demonstration provides a roadmap for 5 to 6 orders of magnitude acceleration for a transverse field Ising model (TFIM) and could possibly be extended to other QMC models as well. The clockless analog hardware can be viewed as the classical counterpart of the quantum annealer and provides performance within a factor of \(< 10\) of the latter. The convergence time for the clockless analog hardware scales with the number of qubits as \(~ N\), improving the \(~N^2 \) scaling for CPU implementations, but appears worse than that reported for quantum annealers by D-Wave.</p>
-                                    <a href="https://www.nature.com/articles/s42005-023-01202-3" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://www.nature.com/articles/s42005-023-01202-3" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +652,7 @@
                                     <div class="publication-title">All-to-all reconfigurability with sparse and higher-order Ising machines</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> October 2024</div>
                                     <p>Domain-specific hardware to solve computationally hard optimization problems has generated tremendous excitement. Here, we evaluate probabilistic bit (p-bit) based Ising Machines (IM) on the 3-regular 3-Exclusive OR Satisfiability (3R3X), as a representative hard optimization problem. We first introduce a multiplexed architecture that emulates all-to-all network functionality while maintaining highly parallelized chromatic Gibbs sampling. We implement this architecture in single Field-Programmable Gate Arrays (FPGA) and show that running the adaptive parallel tempering algorithm demonstrates competitive algorithmic and prefactor advantages over alternative IMs by DWave, Toshiba, and Fujitsu. We also implement higher-order interactions that lead to better prefactors without changing algorithmic scaling for the XORSAT problem. Even though FPGA implementations of p-bits are still not quite as fast as the best possible greedy algorithms accelerated on Graphics Processing Units (GPU), scaled magnetic versions of p-bit IMs could lead to orders of magnitude improvements over the state of the art for generic optimization.</p>
-                                    <a href="https://www.nature.com/articles/s41467-024-53270-w" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://www.nature.com/articles/s41467-024-53270-w" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -420,10 +665,10 @@
                             </h2>
                             <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#publicationsAccordion">
                                 <div class="accordion-body">
-                                    <div class="publication-title">All-to-all reconfigurability with sparse and higher-order Ising machines</div>
+                                    <div class="publication-title">Scalable connectivity for Ising machines: Dense to sparse</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> July 2025</div>
                                     <p>In recent years, hardware implementations of Ising machines have emerged as a viable alternative to quantum computing for solving hard optimization problems, among other applications. Unlike quantum hardware, dense connectivity can be achieved in classical systems; however, we show that dense connectivity leads to severe frequency slowdowns and interconnect congestion, scaling unfavorably with system size. As a scalable solution, we propose a systematic sparsification method for dense graphs by introducing copy nodes to limit the number of neighbors per graph node. In addition to solving interconnect congestion, this approach enables constant frequency scaling, where all spins in a network can be updated in constant time. Nonetheless, sparsification introduces new difficulties, such as constraint-breaking between copied spins and increased convergence times to solve optimization problems, especially if exact ground states are sought. Relaxing the exact-solution requirements, we find that the overheads in convergence times are milder. We demonstrate these ideas by designing probabilistic bit Ising machines using ASAP7 (a predictive 7-nm fin field-effect-transistor technology model) process design kits as well as field-programmable-gate-array-based implementations. Finally, we show how formulating problems in naturally sparse networks (e.g., by invertible logic) sidesteps challenges introduced by sparsification methods. Our results are applicable to a broad family of Ising machines using different hardware implementations.</p>
-                                    <a href="https://www.nature.com/articles/s41467-024-53270-w" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://journals.aps.org/prapplied/abstract/10.1103/kx8m-5h3h" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -439,7 +684,7 @@
                                     <div class="publication-title">Emulating Quantum Circuits With Generalised Ising Machines</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> October 2023</div>
                                     <p>The primary objective of this paper is to present an exact and general procedure for mapping any sequence of quantum gates onto a network of probabilistic p-bits which can take on one of two values 0 and 1. The first \(n\) p-bits represent the input qubits, while the other p-bits represent the qubits after the application of successive gating operations. We can view this structure as a Boltzmann machine whose states each represent a Feynman path leading from an initial configuration of qubits to a final configuration. Each such path has a complex amplitude \(\psi \) which can be associated with a complex energy. The real part of this energy can be used to generate samples of Feynman paths in the usual way, while the imaginary part is accounted for by treating the samples as complex entities, unlike ordinary Boltzmann machines where samples are positive. Quantum gates often have purely imaginary energy functions for which all configurations have the same probability and one cannot take advantage of sampling techniques. Typically this would require us to collect \(2^{nd}\) samples which would severely limit its utility. However, if we can use suitable transformations to introduce a real part in the energy function then powerful sampling algorithms like Gibbs sampling can be harnessed to get acceptable results with far fewer samples and perhaps even escape the exponential scaling with \(nd\) . This algorithmic acceleration can then be supplemented with special-purpose hardware accelerators like Ising Machines which can obtain a very large number of samples per second through a combination of massive parallelism, pipelining, and clockless mixed-signal operation made possible by codesigning circuits and architectures to match the algorithm. Our results for mapping an arbitrary quantum circuit to a Boltzmann machine with a complex energy function should help push the boundaries of the simulability of quantum circuits with probabilistic resources and compare them with NISQ-era quantum computers.</p>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/10278418" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/10278418" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +700,7 @@
                                     <div class="publication-title">A full-stack view of probabilistic computing with p-bits: devices, architectures and algorithms</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> March 2023</div>
                                     <p>The transistor celebrated its 75th birthday in 2022. The continued scaling of the transistor defined by Moore’s law continues, albeit at a slower pace. Meanwhile, computing demands and energy consumption required by modern artificial intelligence (AI) algorithms have skyrocketed. As an alternative to scaling transistors for general-purpose computing, the integration of transistors with unconventional technologies has emerged as a promising path for domain-specific computing. In this article, we provide a full-stack review of probabilistic computing with p-bits as a representative example of the energy-efficient and domain-specific computing movement. We argue that p-bits could be used to build energy-efficient probabilistic systems, tailored for probabilistic algorithms and applications. From hardware, architecture, and algorithmic perspectives, we outline the main applications of probabilistic computers ranging from probabilistic machine learning (ML) and AI to combinatorial optimization and quantum simulation. Combining emerging nanodevices with the existing CMOS ecosystem will lead to probabilistic computers with orders of magnitude improvements in energy efficiency and probabilistic sampling, potentially unlocking previously unexplored regimes for powerful probabilistic algorithms.</p>
-                                    <a href="https://ieeexplore.ieee.org/document/10068500" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/document/10068500" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -470,7 +715,7 @@
                                     <div class="publication-title">Training Deep Boltzmann Networks with Sparse Ising Machines</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> June 2024</div>
                                     <p>The slowing down of Moore's law has driven the development of unconventional computing paradigms, such as specialized Ising machines tailored to solve combinatorial optimization problems. In this paper, we show a new application domain for probabilistic bit (p-bit) based Ising machines by training deep generative AI models with them. Using sparse, asynchronous, and massively parallel Ising machines we train deep Boltzmann networks in a hybrid probabilistic-classical computing setup. We use the full MNIST and Fashion MNIST (FMNIST) dataset without any downsampling and a reduced version of CIFAR-10 dataset in hardware-aware network topologies implemented in moderately sized Field Programmable Gate Arrays (FPGA). For MNIST, our machine using only 4,264 nodes (p-bits) and about 30,000 parameters achieves the same classification accuracy (90%) as an optimized software-based restricted Boltzmann Machine (RBM) with approximately 3.25 million parameters. Similar results follow for FMNIST and CIFAR-10. Additionally, the sparse deep Boltzmann network can generate new handwritten digits and fashion products, a task the 3.25 million parameter RBM fails at despite achieving the same accuracy. Our hybrid computer takes a measured 50 to 64 billion probabilistic flips per second, which is at least an order of magnitude faster than superficially similar Graphics and Tensor Processing Unit (GPU/TPU) based implementations. The massively parallel architecture can comfortably perform the contrastive divergence algorithm (CD-n) with up to n = 10 million sweeps per update, beyond the capabilities of existing software implementations. These results demonstrate the potential of using Ising machines for traditionally hard-to-train deep generative Boltzmann networks, with further possible improvement in nanodevice-based realizations.</p>
-                                    <a href="https://www.nature.com/articles/s41928-024-01182-4" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://www.nature.com/articles/s41928-024-01182-4" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -485,7 +730,7 @@
                                     <div class="publication-title">Machine Learning Quantum Systems with Magnetic p-bits</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> May 2023</div>
                                     <p>The slowing down of Moore’s Law has led to a crisis as the computing workloads of Artificial Intelligence (AI) algorithms continue skyrocketing. There is an urgent need for scalable and energy-efficient hardware catering to the unique requirements of AI algorithms and applications. In this environment, probabilistic computing with p-bits emerged as a scalable, domain-specific, and energy-efficient computing paradigm, particularly useful for probabilistic applications and algorithms.In particular, spintronic devices such as stochastic magnetic tunnel junctions (sMTJ) show great promise in designing integrated p-computers. Here, we examine how a scalable probabilistic computer with such magnetic p-bits can be useful for an emerging field combining machine learning and quantum physics.</p>
-                                    <a href="https://ieeexplore.ieee.org/document/10228205" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/document/10228205" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -500,7 +745,7 @@
                                     <div class="publication-title">Scalable Emulation of Sign-Problem–Free Hamiltonians with Room-Temperature p-bits</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> September 2019</div>
                                     <p>The growing field of quantum computing is based on the concept of a q-bit, which is a delicate superposition of 0 and 1, requiring cryogenic temperatures for its physical realization along with challenging coherent coupling techniques for entangling them. By contrast, a probabilistic bit or a p-bit is a robust classical entity that fluctuates between 0 and 1 and can be implemented at room temperature using present-day technology. Here, we show that a probabilistic coprocessor built out of room-temperature p-bits can be used to accelerate simulations of a special class of quantum many-body systems that are sign-problem–free or "stoquastic," leveraging the well-known Suzuki-Trotter decomposition that maps a \(d\)-dimensional quantum many-body Hamiltonian to a \(d+1\)-dimensional classical Hamiltonian. This mapping allows an efficient emulation of a quantum system by classical computers and is commonly used in software to perform quantum Monte Carlo (QMC) algorithms. By contrast, we show that a compact, embedded magnetic tunnel junction (MTJ)-based coprocessor can serve as a highly efficient hardware accelerator for such QMC algorithms, providing an improvement in speed of several orders of magnitude compared to optimized CPU implementations. Using realistic device-level spice simulations, we demonstrate that the correct quantum correlations can be obtained using a classical 𝑝-circuit built with existing technology and operating at room temperature. The proposed coprocessor can serve as a tool to study stoquastic quantum many-body systems, overcoming challenges associated with physical quantum annealers.</p>
-                                    <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.12.034061" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.12.034061" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -515,7 +760,7 @@
                                     <div class="publication-title">A Probabilistic Approach to Quantum Inspired Algorithms</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> December 2019</div>
                                     <p>Digital computing is based on the notion of deterministic bits that are 0 or 1. At the other extreme, quantum computing is based on q-bits that are delicate, coherent superpositions of 0 and 1. In this paper, we describe an intermediate approach between these two extremes, namely Probabilistic Computing, based on the notion of probabilistic or p-bits that fluctuate between 0 and 1. Hardware p-bits can be compactly realized from emerging spintronic building blocks that are smaller, more energy efficient compared to their traditional CMOS implementations. Probabilistic circuits built out of interconnected p-bits can be useful for a host of quantum computing inspired algorithms.</p>
-                                    <a href="https://ieeexplore.ieee.org/document/8993655" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/document/8993655" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -530,7 +775,7 @@
                                     <div class="publication-title">The Nonequilibrium Green Function (NEGF) Method</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> November 2022</div>
                                     <p>The nonequilibrium Green function (NEGF) method was established in the 1960s through the classic work of Schwinger, Kadanoff, Baym, Keldysh, and others using many-body perturbation theory (MBPT) and the diagrammatic theory for nonequilibrium processes. Much of the literature is based on the original MBPT-based approach, and this makes it inaccessible to those unfamiliar with advanced quantum statistical mechanics. We obtain the NEGF equations directly from a one-electron Schrödinger equation using relatively elementary arguments. These equations have been used to discuss many problems of great interest such as quantized conductance, (integer) quantum Hall effect, Anderson localization, resonant tunneling, and spin transport without a systematic treatment of many-body effects. But it goes beyond purely coherent transport allowing us to include phase-breaking interactions (both momentum-relaxing and momentum-conserving as well as spin-conserving and spin-relaxing) within a self-consistent Born approximation. We believe that the scope and utility of the NEGF equations transcend the MBPT-based approach originally used to derive it. NEGF teaches us how to combine quantum dynamics with “contacts” much as Boltzmann taught us how to combine classical dynamics with “contacts,” using the word “contacts” in a broad figurative sense to denote all kinds of entropy-driven processes. We believe that this approach to “contact-ing” the Schrödinger equation should be of broad interest to anyone working on device physics or nonequilibrium statistical mechanics in general.</p>
-                                    <a href="https://link.springer.com/chapter/10.1007/978-3-030-79827-7_44" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://link.springer.com/chapter/10.1007/978-3-030-79827-7_44" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -545,7 +790,7 @@
                                     <div class="publication-title">Experimental evaluation of simulated quantum annealing with MTJ-augmented p-bits</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> December 2022</div>
                                     <p>The slowing down of Moore’s Law has created an exciting new era of electronics, leading to the emergence of various types of CMOS+X devices and architectures. Here, we present the first experimental demonstration of a probabilistic computer where a stochastic magnetic tunnel junction (sMTJ) drives a powerful CMOS-based field programmable gate array (FPGA) in a heterogeneous compute fabric. We use our machine to experimentally evaluate the simulated quantum annealing (SQA) algorithm, known to closely mimic the behavior of D-Wave’s quantum annealers which implement the transverse field Ising model (TFIM). Our machine matches the exact solution of the TFIM where p-bits in the FPGA are asynchronously driven by the stochastic dynamics of a magnetic tunnel junction. To compare the performance of SQA against classical annealing (CA) in hard combinatorial optimization at large scale, we also design a fully digital emulator of our asynchronous architecture in the FPGA. Our digital system uses 7,085 p-bits to factor up to 26-bit integers and is about 10X faster than optimized Tensor (TPU) and Graphics Processing Units (GPU) at lower power. Surprisingly, we find that the additional replica networks necessary for SQA do not lead to appreciably better performance over an optimized CA that is using the same computational resources. The systematic evaluation of the SQA algorithm we present will be relevant for other types of accelerators, such as photonic or electronic Ising machines and the integrated scaling of our CMOS + sMTJ architecture could lead to orders of magnitude further improvements over TPU and GPUs, according to experimentally-validated projections.</p>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/10019530s" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/10019530" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -555,12 +800,12 @@
                                     Quantum realization of some quaternary circuits
                                 </button>
                             </h2>
-                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingThen" data-bs-parent="#publicationsAccordion">
+                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#publicationsAccordion">
                                 <div class="accordion-body">
                                     <div class="publication-title">Quantum realization of some quaternary circuits</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> November 2008</div>
                                     <p>We present the design of quaternary quantum version of reversible circuits such as Toffoli gate, modified Fredkin gate, mux, demux, encoder-decoder using linear ion realizable quaternary Muthukrishnan-Stroud gates. Our realization of quaternary Toffoli gate is more efficient than the previous realization and other quaternary circuits are realized for the time in literature.</p>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/4766486" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/4766486" target="_blank" rel="noopener noreferrer"class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -575,7 +820,7 @@
                                     <div class="publication-title">Synthesis of GF(3) Based Reversible/Quantum Logic Circuits without Garbage Output</div>
                                     <div class="publication-date"><i class="far fa-calendar-alt me-1"></i> May 2019</div>
                                     <p>We present a method of synthesizing Ternary GaloisField (GF(3)) based reversible/quantum logic circuits without any ancillary trits/qutrits and hence without any garbage outputs. We realize multi input ternary Toffoli gate and square functions of GF(3) variables using linear ion trap realizable Muthukrishnan-Stroud (M-S) gates and shift gates in the absence of ancillary qutrits. Then based on the Galois Field Sum of Products (GFSOP)expression of a multi-variable GF(3) function, we synthesize the corresponding circuit.</p>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/5010382" target="_blank" class="publication-link">Read More</a>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/5010382" target="_blank" rel="noopener noreferrer" class="publication-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -587,30 +832,11 @@
                     <h2 class="section-heading" id="contact">Contact Me</h2>
                 </div>
                 <div class="main-content-box">
-                    <p>If you would like to get in touch, please email me at <a href="mailto:schowdhury@ucsb.edu">schowdhury@ucsb.edu</a> or connect with me through my social media profiles listed in the sidebar.</p>
+                    <p>If you would like to get in touch, please email me at <a href="mailto:schowdhury@ucsb.edu">schowdhury@ucsb.edu</a> or connect with me through my social media profiles listed in Welcome.</p>
                 </div>
             </div>
             <!-- Sidebar Area -->
-            <div class="col-md-4">
-                <div class="sidebar-content">
-                    <h2>Shuvro Chowdhury, PhD</h2>
-                    <img height="150pt" width="150pt" src="SC.jpg" alt="Shuvro Chowdhury's Photo" class="profile-img mb-3">
-                    <p>Postdoctoral Scholar<br>
-		    University of California Santa Barbara<br>
-		    Santa Barbara, CA</p>
-                    <p><a href="mailto:schowdhury@ucsb.edu">schowdhury@ucsb.edu</a></p>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/shuvro-chowdhury/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/ShuvroChowdhury" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=LaaV0xwAAAAJ" target="_blank" aria-label="Google Scholar">
-                            <i class="fas fa-graduation-cap"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- <div class="col-lg-4">
                 <div class="sidebar-content">
                     <h2>Quick Links</h2>
                     <ul class="list-unstyled">
@@ -619,11 +845,11 @@
                         <li><a href="#academic-degrees">Academic Degrees</a></li>
                         <li><a href="#research">Research Interests</a></li>
                         <li><a href="#contact">Contact</a></li>
-						<li><a href="https://opus.ece.ucsb.edu/">OPUS Lab</a></li>
+						<li><a href="https://opus.ece.ucsb.edu/">OPUS Lab</a></li-->
                         <!-- Add more links as needed -->
-                    </ul>
-                </div>
-            </div>
+                    <!-- </ul>
+                </div> -->
+            <!-- </div> -->
         </div>
     </div>
 
